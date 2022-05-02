@@ -1,12 +1,10 @@
 package com.zk.blog.api.controller;
 
 
+import com.zk.blog.api.entity.User;
 import com.zk.blog.api.service.UserService;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 
@@ -26,5 +24,16 @@ public class UserController {
     @GetMapping("/{id}")
     public Object test(@PathVariable("id") Long id) {
         return userService.getById(id);
+    }
+
+    /**
+     * 测试实体校验
+     *
+     * @param user 入参
+     * @return Object
+     */
+    @PostMapping("/save")
+    public Object testUser(@RequestBody @Validated User user) {
+        return user.toString();
     }
 }
