@@ -1,0 +1,4 @@
+GET http://localhost:8080/user/1
+Accept: application/json
+
+<> 2022-05-02T154117.200.json
