@@ -17,7 +17,7 @@ public class ResponseResult implements Serializable {
 
     public static ResponseResult success(Object data) {
         ResponseResult m = new ResponseResult();
-        m.setCode(0);
+        m.setCode(200);
         m.setData(data);
         m.setMsg("操作成功");
         return m;
@@ -25,7 +25,7 @@ public class ResponseResult implements Serializable {
 
     public static ResponseResult success(String mess, Object data) {
         ResponseResult m = new ResponseResult();
-        m.setCode(0);
+        m.setCode(200);
         m.setData(data);
         m.setMsg(mess);
         return m;
@@ -33,7 +33,7 @@ public class ResponseResult implements Serializable {
 
     public static ResponseResult fail(String mess) {
         ResponseResult m = new ResponseResult();
-        m.setCode(-1);
+        m.setCode(401);
         m.setData(null);
         m.setMsg(mess);
         return m;
@@ -41,7 +41,7 @@ public class ResponseResult implements Serializable {
 
     public static ResponseResult fail(String mess, Object data) {
         ResponseResult m = new ResponseResult();
-        m.setCode(-1);
+        m.setCode(401);
         m.setData(data);
         m.setMsg(mess);
         return m;
